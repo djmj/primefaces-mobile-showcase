@@ -4,6 +4,14 @@
 
 Showcase of **only** PrimeFaces mobile components and RenderKit which is a fork of the legacy showcase updated to newest mobile release. [Repo](https://github.com/primefaces/primefaces-showcase-legacy)
 
+## Demo
+
+__coming soon__
+
+## Download
+
+__coming soon_
+
 ## PrimeFaces Mobile
 
 For more informations and documentation see: (PrimeFaces-Mobile 7.0)[https://github.com/djmj/primefaces-mobile]
