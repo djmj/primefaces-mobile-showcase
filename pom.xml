@@ -3,7 +3,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.primefaces</groupId>
-    <artifactId>mobile-showcase</artifactId>
+    <artifactId>primefaces-mobile-showcase</artifactId>
     <packaging>war</packaging>
     <version>7.0</version>
 
@@ -182,7 +182,7 @@
                 <version>9.4.9.v20180320</version>
                 <configuration>
                     <webAppConfig>
-                        <contextPath>/showcase</contextPath>
+                        <contextPath>/primefaces-mobile-showcase</contextPath>
                     </webAppConfig>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                 </configuration>

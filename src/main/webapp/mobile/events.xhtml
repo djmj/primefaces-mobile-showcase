@@ -30,15 +30,13 @@
                 <p:growl id="msgs" showDetail="true" />
                 
                 <h2 class="first">Swipe and Taphold</h2>
-                <p>Swipe an item left or right to remove it and taphold to view model information.</p>
+                <p>Taphold to view model information.</p>
+                <p style="text-decoration: line-through;">Swipe an item left or right to remove it.</p>
                 <p:dataList value="#{eventsView.cars}" var="car" pt:data-inset="true">
                     
-                    <!-- 
-                    <p:ajax event="swipeleft" listener="#{eventsView.swipeCar}" update="@form:msgs @this"/>
-                    <p:ajax event="swiperight" listener="#{eventsView.swipeCar}" update="@form:msgs @this"/>
-                    -->
+
                     
-                    <p:ajax event="taphold" listener="#{eventsView.tapCar}" update="@form:msgs"/>
+                    <p:ajax event="taphold" listener="#{eventsView.tapCar}" update="@form:msgs"/> 
                     <h:outputText value="#{car.brand} - #{car.color}" />
                 </p:dataList>
             </h:form>

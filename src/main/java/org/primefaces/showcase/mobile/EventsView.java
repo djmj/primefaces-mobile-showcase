@@ -61,6 +61,7 @@ public class EventsView implements Serializable
         cars.remove(car);
         FacesContext.getCurrentInstance().addMessage(null, new FacesMessage(FacesMessage.SEVERITY_INFO, "Car Swiped", "Removed: " + car.getId()));
     }
+   
     
     public void tapCar(SelectEvent event) {
         FacesMessage msg = new FacesMessage("Car Selected", ((Car) event.getObject()).getId());
