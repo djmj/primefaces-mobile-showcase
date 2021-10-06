@@ -8,9 +8,9 @@ Showcase of **only** PrimeFaces mobile components and RenderKit which is a fork 
 
 __coming soon__
 
-## Download
+## Download WAR
 
-__coming soon_
+* [7.0](https://cdn.deloma.de/others/libraries/primefaces/primefaces-mobile-showcase-7.0.war)
 
 ## PrimeFaces Mobile
 
