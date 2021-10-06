@@ -14,7 +14,7 @@ __coming soon__
 
 ## PrimeFaces Mobile
 
-For more informations and documentation see: (PrimeFaces-Mobile 7.0)[https://github.com/djmj/primefaces-mobile]
+For more informations and documentation see: [PrimeFaces-Mobile 7.0](https://github.com/djmj/primefaces-mobile)
 
 ### License
 
