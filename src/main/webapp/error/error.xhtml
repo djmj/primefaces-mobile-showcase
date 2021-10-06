@@ -3,7 +3,8 @@
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
                 xmlns:p="http://primefaces.org/ui"
-                template="/WEB-INF/template.xhtml">
+                xmlns:pm="http://primefaces.org/mobile"
+                template="/WEB-INF/mobile.xhtml">
 
     <ui:define name="head">
         <style type="text/css">
@@ -18,10 +19,10 @@
     </ui:define>
 
     <ui:define name="description">
-        A unexpected error occured! Message: #{pfExceptionHandler.message}
+        <pm:content styleClass="jqm-content">A unexpected error occured! Message: #{pfExceptionHandler.message}</pm:content>
     </ui:define>
 
-    <ui:define name="implementation">
+    <ui:define name="content">
         <h:outputText value="#{pfExceptionHandler.formattedStackTrace}" escape="false" />
     </ui:define>
 

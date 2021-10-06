@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.primefaces</groupId>
-    <artifactId>showcase</artifactId>
+    <artifactId>mobile-showcase</artifactId>
     <packaging>war</packaging>
-    <version>6.3-SNAPSHOT</version>
+    <version>7.0</version>
 
-    <name>primefaces-showcase</name>
+    <name>primefaces-mobile-showcase</name>
     <url>http://maven.apache.org</url>
 
     <properties>
@@ -43,11 +43,13 @@
             <groupId>org.hibernate</groupId>
             <artifactId>hibernate-validator</artifactId>
             <version>5.0.1.Final</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.jboss.weld.servlet</groupId>
             <artifactId>weld-servlet</artifactId>
             <version>2.4.5.Final</version>
+            <scope>provided</scope>
         </dependency>
 
          <!-- Data Exporter -->
@@ -132,6 +134,13 @@
             <artifactId>barcode4j-light</artifactId>
             <version>2.1</version>
         </dependency>
+
+		<dependency>
+		    <groupId>net.java.dev.rome</groupId>
+		    <artifactId>rome</artifactId>
+		    <version>1.0.0</version>
+		</dependency>
+		
     </dependencies>
 
     <repositories>
@@ -166,7 +175,8 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.0</version>
             </plugin>
-            <plugin>
+            
+			<plugin>
                 <groupId>org.eclipse.jetty</groupId>
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>9.4.9.v20180320</version>
@@ -203,89 +213,40 @@
                 <activeByDefault>true</activeByDefault>
             </activation>
             <properties>
-                <jsfVersion>Mojarra-2.3.2</jsfVersion>
-                <primefacesVersion>PrimeFaces-6.3-SNAPSHOT</primefacesVersion>
+                <jsfVersion>Mojarra-2.3.8</jsfVersion>
+                <primefacesVersion>PrimeFaces-7.0</primefacesVersion>
+                <primefacesMobileVersion>PrimeFaces-Mobile-7.0</primefacesMobileVersion>
+                <omnifacesVersion>OmniFaces 3.11.1</omnifacesVersion>
+                <jQueryVersion>jQuery v3.3.1</jQueryVersion>
+                <jQueryMobileVersion>jQuery Mobile 1.5.0-rc1</jQueryMobileVersion>
             </properties>
             <dependencies>
+            
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>6.3-SNAPSHOT</version>
+                    <version>7.0</version>
                 </dependency>
-                <dependency>
-                    <groupId>org.glassfish</groupId>
-                    <artifactId>javax.faces</artifactId>
-                    <version>2.3.2</version>
-                </dependency>
-                <!-- MyFaces
-                <dependency>
-                    <groupId>org.apache.myfaces.core</groupId>
-                    <artifactId>myfaces-api</artifactId>
-                    <version>2.3.0-beta</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.apache.myfaces.core</groupId>
-                    <artifactId>myfaces-impl</artifactId>
-                    <version>2.3.0-beta</version>
-                </dependency>
-                -->
-            </dependencies>
-        </profile>
-        <profile>
-            <id>community-stable</id>
-            <properties>
-                <jsfVersion>Mojarra-2.3.2</jsfVersion>
-                <primefacesVersion>PrimeFaces-6.2</primefacesVersion>
-            </properties>
-            <dependencies>
-                <dependency>
+                
+				<dependency>
                     <groupId>org.primefaces</groupId>
-                    <artifactId>primefaces</artifactId>
-                    <version>6.2</version>
+                    <artifactId>primefaces-mobile</artifactId>
+                    <version>7.0</version>
                 </dependency>
+                
+				<dependency>
+				    <groupId>org.omnifaces</groupId>
+				    <artifactId>omnifaces</artifactId>
+				    <version>3.11.1</version>
+				</dependency>
+				
                 <dependency>
                     <groupId>org.glassfish</groupId>
                     <artifactId>javax.faces</artifactId>
-                    <version>2.3.2</version>
+                    <version>2.3.8</version>
+                    <scope>provided</scope>
                 </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>elite-dev</id>
-            <properties>
-                <jsfVersion>Mojarra-2.3.2</jsfVersion>
-                <primefacesVersion>PrimeFaces-6.2.6-SNAPSHOT</primefacesVersion>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.primefaces</groupId>
-                    <artifactId>primefaces</artifactId>
-                    <version>6.2.6-SNAPSHOT</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.glassfish</groupId>
-                    <artifactId>javax.faces</artifactId>
-                    <version>2.3.2</version>
-                </dependency>
-            </dependencies>
-        </profile>
-        <profile>
-            <id>elite-dev-6.1.x</id>
-            <properties>
-                <jsfVersion>Mojarra-2.3.2</jsfVersion>
-                <primefacesVersion>PrimeFaces-6.1.19-SNAPSHOT</primefacesVersion>
-            </properties>
-            <dependencies>
-                <dependency>
-                    <groupId>org.primefaces</groupId>
-                    <artifactId>primefaces</artifactId>
-                    <version>6.1.19-SNAPSHOT</version>
-                </dependency>
-                <dependency>
-                    <groupId>org.glassfish</groupId>
-                    <artifactId>javax.faces</artifactId>
-                    <version>2.3.2</version>
-                </dependency>
+                
             </dependencies>
         </profile>
     </profiles>

@@ -1,43 +1,12 @@
-# !!! The showcase is deprecated and replaced by: https://github.com/primefaces/showcase-facelift !!!
-
-
-# PrimeFaces Showcase
+# PrimeFaces Mobile Showcase
 
 ![PrimeFaces icon](https://www.primefaces.org/wp-content/uploads/2016/10/prime_logo_new.png)
 
-### Getting Started
+Showcase of **only** PrimeFaces mobile components and RenderKit which is a fork of the legacy showcase updated to newest mobile release. [Repo](https://github.com/primefaces/primefaces-showcase-legacy)
 
-Deployable version of **PrimeFaces Showcase** war file can be downloaded manually or build it from sources.
+## PrimeFaces Mobile
 
-##### Prebuilt war
-
-For a full list of the available downloads, please visit the [download page](http://www.primefaces.org/downloads). Scroll down to showcase for war file link.
-
-##### Build from sources
-
-```
-git clone https://github.com/primefaces/showcase.git
-cd showcase
-mvn clean                  -- clean temp files from target folder
-mvn package                -- create war file (under target directory)
-mvn jetty:run              -- run showcase project locally
-```
-
-##### Run from local sources
-
-```
-mvn clean jetty:run
-```
-
-[http://localhost:8080/showcase/](http://localhost:8080/showcase)
-
-### Documentation
-
-User Guide is available at [documentation](http://www.primefaces.org/documentation) page along with other additional resoures.
-
-### Contribution
-
-Visit [Contribution Wiki](https://github.com/primefaces/primefaces/wiki/Contributing-to-Primefaces) page for the detailed information.
+For more informations and documentation see: (PrimeFaces-Mobile 7.0)[https://github.com/djmj/primefaces-mobile]
 
 ### License
 

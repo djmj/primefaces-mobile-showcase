@@ -17,15 +17,18 @@ package org.primefaces.showcase.view.app;
 
 import java.io.Serializable;
 import java.util.Map;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.SessionScoped;
+
+import javax.annotation.ManagedBean;
+import javax.enterprise.context.SessionScoped;
 import javax.faces.context.FacesContext;
 
 @ManagedBean
 @SessionScoped
-public class GuestPreferences implements Serializable {
-    
-    private String theme = "omega";
+public class GuestPreferences implements Serializable 
+{
+	private static final long serialVersionUID = 6221137135251408888L;
+	
+	private String theme = "omega";
 
 	public String getTheme() {		
 		return theme;

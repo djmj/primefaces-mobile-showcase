@@ -18,15 +18,18 @@ package org.primefaces.showcase.view.data;
 import java.io.Serializable;
 import java.util.List;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
-import javax.faces.bean.ViewScoped;
+import javax.faces.annotation.ManagedProperty;
+import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
+import javax.inject.Named;
+
 import org.primefaces.showcase.domain.Car;
 import org.primefaces.showcase.service.CarService;
 
-@ManagedBean
+@Named
 @ViewScoped
-public class DataListView implements Serializable {
+public class DataListView implements Serializable 
+{
     
     private List<Car> cars1;
     
@@ -36,6 +39,7 @@ public class DataListView implements Serializable {
     
     private Car selectedCar;
     
+    @Inject
     @ManagedProperty("#{carService}")
     private CarService service;
     

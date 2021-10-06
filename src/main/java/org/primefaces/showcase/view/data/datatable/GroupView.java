@@ -22,16 +22,19 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
+
 import org.primefaces.showcase.domain.Player;
 import org.primefaces.showcase.domain.Sale;
 
-@ManagedBean(name="dtGroupView")
+@Named(value="dtGroupView")
 @ViewScoped
-public class GroupView implements Serializable {
-    
-    private final static String[] manufacturers;
+public class GroupView implements Serializable 
+{
+	private static final long serialVersionUID = -658214641585268531L;
+	
+	private final static String[] manufacturers;
     private List<Sale> sales;
     
     private final static String[] playerNames;

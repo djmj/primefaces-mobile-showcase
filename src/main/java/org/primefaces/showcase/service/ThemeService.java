@@ -15,20 +15,27 @@
  */
 package org.primefaces.showcase.service;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ApplicationScoped;
-import javax.faces.bean.ManagedBean;
+import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Named;
 
 import org.primefaces.showcase.domain.Theme;
 
-@ManagedBean(name="themeService", eager = true)
+/**
+ * theme and constants bean x x x
+ */
+@Named(value="themeService")
 @ApplicationScoped
-public class ThemeService {
-    
-    private List<Theme> themes;
+public class ThemeService implements Serializable 
+{
+	private static final long serialVersionUID = 6420374612435027136L;
+	
+
+	private List<Theme> themes;
     
     @PostConstruct
     public void init() {
@@ -76,5 +83,12 @@ public class ThemeService {
     
     public List<Theme> getThemes() {
         return themes;
-    } 
+    }
+
+	public String getCdnURL() {
+		return "https://cdn.dev.deloma.de/";
+	} 
+    
+
+
 }

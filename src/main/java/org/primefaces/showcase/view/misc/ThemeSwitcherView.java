@@ -16,17 +16,23 @@
 package org.primefaces.showcase.view.misc;
 
 import java.util.List;
+
+import javax.annotation.ManagedBean;
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ManagedProperty;
+import javax.enterprise.context.RequestScoped;
+import javax.faces.annotation.ManagedProperty;
+import javax.inject.Inject;
+
 import org.primefaces.showcase.domain.Theme;
 import org.primefaces.showcase.service.ThemeService;
 
+@RequestScoped
 @ManagedBean
 public class ThemeSwitcherView {
 
     private List<Theme> themes;
     
+    @Inject
     @ManagedProperty("#{themeService}")
     private ThemeService service;
 
