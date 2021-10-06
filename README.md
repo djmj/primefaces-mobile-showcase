@@ -6,7 +6,7 @@ Showcase of **only** PrimeFaces mobile components and RenderKit which is a fork 
 
 ## Demo
 
-__coming soon__
+* [Demo](https://admin.deloma.de/primefaces-mobile-showcase/)
 
 ## Download WAR
 

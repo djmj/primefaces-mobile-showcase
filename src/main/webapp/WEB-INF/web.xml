@@ -75,37 +75,6 @@
     <param-value>true</param-value>
   </context-param>
 
-
-  	<!-- define CDN resources -->
-	<context-param>
-		<param-name>org.omnifaces.CDN_RESOURCE_HANDLER_URLS</param-name>
-	    <param-value>
-			primefaces:test.js=//code.jquery.com/test.js
-
-	    </param-value>
-	</context-param>
-
-<!-- 
-			primefaces:mobile/jquery-mobile.js=//code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.js,
-	 		
-
-	 		primefaces:mobile/jquery-mobile.css=//code.jquery.com/mobile/1.5.0-rc1/jquery.mobile-1.5.0-rc1.min.css,
-	 		primefaces:mobile/jquery-mobile-structure.css=//code.jquery.com/mobile/1.5.0-rc1/jquery.mobile.structure-1.5.0-rc1.min.css,
-	 		primefaces:mobile/jquery-mobile-icons.css=//code.jquery.com/mobile/1.5.0-rc1/jquery.mobile.icons-1.5.0-rc1.min.css,
-
--->	 		
-	 		
-	 		<!-- 
-
-
-	 		primefaces:7.0/jquery/jquery.js=#{themeService.cdnURL}/html/plugins/primefaces/7.0/jquery/jquery.js, 
-	 		primefaces:7.0/jquery/jquery-plugins.js=#{themeService.cdnURL}/html/plugins/primefaces/7.0/jquery/jquery-plugins.js, 
-	 		primefaces:7.0/core.js=#{themeService.cdnURL}/html/plugins/primefaces/7.0/core.js  -->
-			<!-- 
-			primefaces:components.js=#{themeService.cdnURL}/html/plugins/primefaces/6.1/components.js 
-			-->
-
-
 	<filter>
 	    <filter-name>characterEncodingFilter</filter-name>
 	    <filter-class>org.omnifaces.filter.CharacterEncodingFilter</filter-class>

@@ -5,7 +5,6 @@
 	version="2.3">
 	
 	<application>
-		<resource-handler>org.omnifaces.resourcehandler.CDNResourceHandler</resource-handler>
 		<locale-config>
             <default-locale>en</default-locale>
         </locale-config>
