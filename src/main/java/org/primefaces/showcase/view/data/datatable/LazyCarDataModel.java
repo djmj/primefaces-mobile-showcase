@@ -20,7 +20,10 @@ import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
+import org.primefaces.model.FilterMeta;
 import org.primefaces.model.LazyDataModel;
+import org.primefaces.model.SortMeta;
 import org.primefaces.model.SortOrder;
 import org.primefaces.showcase.domain.Car;
 
@@ -51,18 +54,20 @@ public class LazyCarDataModel extends LazyDataModel<Car> {
     }
 
     @Override
-    public List<Car> load(int first, int pageSize, String sortField, SortOrder sortOrder, Map<String,Object> filters) {
+    public List<Car> load(int first, int pageSize, Map<String, SortMeta> sortBy, Map<String, FilterMeta> filterBy) 
+    {
         List<Car> data = new ArrayList<Car>();
 
         //filter
         for(Car car : datasource) {
             boolean match = true;
 
-            if (filters != null) {
-                for (Iterator<String> it = filters.keySet().iterator(); it.hasNext();) {
+            if (filterBy != null) {
+                for (Iterator<FilterMeta> it = filterBy.values().iterator(); it.hasNext();) {
                     try {
-                        String filterProperty = it.next();
-                        Object filterValue = filters.get(filterProperty);
+                    	FilterMeta filterMeta = it.next();
+                        String filterProperty = filterMeta.getFilterField();
+                        Object filterValue = filterMeta.getFilterValue();
                         String fieldValue = String.valueOf(car.getClass().getField(filterProperty).get(car));
 
                         if(filterValue == null || fieldValue.startsWith(filterValue.toString())) {
@@ -84,8 +89,9 @@ public class LazyCarDataModel extends LazyDataModel<Car> {
         }
 
         //sort
-        if(sortField != null) {
-            Collections.sort(data, new LazySorter(sortField, sortOrder));
+        if(sortBy != null) {
+        	SortMeta sortMeta = sortBy.values().iterator().next();
+            Collections.sort(data, new LazySorter(sortMeta.getSortField(), sortMeta.getSortOrder()));
         }
 
         //rowCount

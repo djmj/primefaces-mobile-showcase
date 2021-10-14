@@ -15,6 +15,19 @@
         
         <ui:insert name="head" />
 
+	<style>
+	.ui-icon.fa::before {
+	    color: #fff;
+	    text-shadow: none;
+	    position: relative;
+	    top: 3px;
+	}
+	
+	.ui-icon.fa {
+		text-align: center;
+	}
+	</style>
+
     </h:head>
     
     <h:body>
@@ -77,14 +90,13 @@
                         <p:menuitem value="Translate" outcome="/mobile/translate" target="_blank"/>
                         <p:menuitem value="News" outcome="/mobile/news" target="_blank"/>
                         <p:menuitem value="Contacts" outcome="/mobile/contacts" target="_blank"/>
-                        <p:menuitem value="Push" outcome="/mobile/checkin" target="_blank"/>
                     </p:submenu>
                 </p:menu>
             </div>
             
             <pm:footer styleClass="jqm-footer" fixed="true" tapToggle="false">
                 <p>Running: #{build.primefacesMobileVersion} / #{build.primefacesVersion} on #{build.jsfVersion}
-                	with #{build.jQueryMobileVersion} and #{build.jQueryVersion} / #{build.jQueryMobileVersion}</p>
+                	with #{build.omnifacesVersion} and #{build.jQueryVersion} / #{build.jQueryMobileVersion}</p>
             </pm:footer>
 
         </pm:page>

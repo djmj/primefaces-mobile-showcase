@@ -8,13 +8,9 @@ Showcase of **only** PrimeFaces mobile components and RenderKit which is a fork 
 
 * [Demo](https://admin.deloma.de/primefaces-mobile-showcase/)
 
-## Download WAR
-
-* [7.0](https://cdn.deloma.de/others/libraries/primefaces/primefaces-mobile-showcase-7.0.war)
-
 ## PrimeFaces Mobile
 
-For more informations and documentation see: [PrimeFaces-Mobile 7.0](https://github.com/djmj/primefaces-mobile)
+For more informations and documentation see: [PrimeFaces-Mobile](https://github.com/djmj/primefaces-mobile)
 
 ### License
 

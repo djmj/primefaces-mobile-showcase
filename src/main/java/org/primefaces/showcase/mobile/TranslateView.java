@@ -27,8 +27,8 @@ import javax.annotation.PostConstruct;
 import javax.faces.context.FacesContext;
 import javax.inject.Named;
 
-import org.primefaces.json.JSONArray;
-import org.primefaces.json.JSONObject;
+import org.primefaces.shaded.json.JSONArray;
+import org.primefaces.shaded.json.JSONObject;
 
 @Named
 public class TranslateView 

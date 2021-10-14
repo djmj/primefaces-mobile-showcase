@@ -26,7 +26,7 @@ import javax.inject.Named;
 import org.primefaces.showcase.domain.Theme;
 
 /**
- * theme and constants bean x x x
+ * theme service bean
  */
 @Named(value="themeService")
 @ApplicationScoped
@@ -85,10 +85,6 @@ public class ThemeService implements Serializable
         return themes;
     }
 
-	public String getCdnURL() {
-		return "https://cdn.dev.deloma.de/";
-	} 
-    
 
 
 }

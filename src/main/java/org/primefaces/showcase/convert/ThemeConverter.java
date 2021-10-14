@@ -23,11 +23,13 @@ import javax.faces.convert.Converter;
 import javax.faces.convert.ConverterException;
 import javax.faces.convert.FacesConverter;
 import javax.inject.Inject;
+import javax.inject.Named;
 
 import org.primefaces.showcase.domain.Theme;
 import org.primefaces.showcase.service.ThemeService;
 
-@FacesConverter("themeConverter")
+@Named
+@FacesConverter(value = "themeConverter", managed=true)
 public class ThemeConverter implements Converter<Theme> 
 {
     @Inject
