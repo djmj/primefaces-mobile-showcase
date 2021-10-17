@@ -5,7 +5,7 @@
     <groupId>org.primefaces</groupId>
     <artifactId>primefaces-mobile-showcase</artifactId>
     <packaging>war</packaging>
-    <version>8.0</version>
+    <version>10.0</version>
 
     <name>primefaces-mobile-showcase</name>
     <url>http://maven.apache.org</url>
@@ -214,8 +214,8 @@
             </activation>
             <properties>
                 <jsfVersion>Mojarra-2.3.8</jsfVersion>
-                <primefacesVersion>PrimeFaces-8.0</primefacesVersion>
-                <primefacesMobileVersion>PrimeFaces-Mobile-8.0</primefacesMobileVersion>
+                <primefacesVersion>PrimeFaces-10.0.0</primefacesVersion>
+                <primefacesMobileVersion>PrimeFaces-Mobile-10.0</primefacesMobileVersion>
                 <omnifacesVersion>OmniFaces 3.11.1</omnifacesVersion>
                 <jQueryVersion>jQuery v3.3.1</jQueryVersion>
                 <jQueryMobileVersion>jQuery Mobile 1.5.0-rc1</jQueryMobileVersion>
@@ -225,13 +225,15 @@
                 <dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces</artifactId>
-                    <version>8.0</version>
+                    <version>10.0.0</version>
                 </dependency>
                 
 				<dependency>
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces-mobile</artifactId>
-                    <version>8.0</version>
+                    <version>10.0</version>
+                    <scope>system</scope>
+					<systemPath>c:/Users/Marco/git/primefaces-mobile/target/primefaces-mobile-10.0.jar</systemPath>
                 </dependency>
                 
 				<dependency>

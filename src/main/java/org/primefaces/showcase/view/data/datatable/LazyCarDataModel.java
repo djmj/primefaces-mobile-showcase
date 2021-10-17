@@ -24,15 +24,16 @@ import java.util.Map;
 import org.primefaces.model.FilterMeta;
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortMeta;
-import org.primefaces.model.SortOrder;
 import org.primefaces.showcase.domain.Car;
 
 /**
  * Dummy implementation of LazyDataModel that uses a list to mimic a real datasource like a database.
  */
-public class LazyCarDataModel extends LazyDataModel<Car> {
-    
-    private List<Car> datasource;
+public class LazyCarDataModel extends LazyDataModel<Car>
+{
+	private static final long serialVersionUID = 2547082092839318308L;
+	
+	private List<Car> datasource;
     
     public LazyCarDataModel(List<Car> datasource) {
         this.datasource = datasource;
@@ -49,7 +50,7 @@ public class LazyCarDataModel extends LazyDataModel<Car> {
     }
 
     @Override
-    public Object getRowKey(Car car) {
+    public String getRowKey(Car car) {
         return car.getId();
     }
 
@@ -66,7 +67,7 @@ public class LazyCarDataModel extends LazyDataModel<Car> {
                 for (Iterator<FilterMeta> it = filterBy.values().iterator(); it.hasNext();) {
                     try {
                     	FilterMeta filterMeta = it.next();
-                        String filterProperty = filterMeta.getFilterField();
+                        String filterProperty = filterMeta.getField();
                         Object filterValue = filterMeta.getFilterValue();
                         String fieldValue = String.valueOf(car.getClass().getField(filterProperty).get(car));
 
@@ -91,7 +92,7 @@ public class LazyCarDataModel extends LazyDataModel<Car> {
         //sort
         if(sortBy != null) {
         	SortMeta sortMeta = sortBy.values().iterator().next();
-            Collections.sort(data, new LazySorter(sortMeta.getSortField(), sortMeta.getSortOrder()));
+            Collections.sort(data, new LazySorter(sortMeta.getField(), sortMeta.getOrder()));
         }
 
         //rowCount

@@ -63,8 +63,8 @@ public class EventsView implements Serializable
     }
    
     
-    public void tapCar(SelectEvent event) {
-        FacesMessage msg = new FacesMessage("Car Selected", ((Car) event.getObject()).getId());
+    public void tapCar(SelectEvent<Car> event) {
+        FacesMessage msg = new FacesMessage("Car Selected", event.getObject().getId());
         FacesContext.getCurrentInstance().addMessage(null, msg);
     }
 }
