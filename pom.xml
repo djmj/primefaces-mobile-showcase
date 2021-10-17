@@ -232,8 +232,6 @@
                     <groupId>org.primefaces</groupId>
                     <artifactId>primefaces-mobile</artifactId>
                     <version>10.0</version>
-                    <scope>system</scope>
-					<systemPath>c:/Users/Marco/git/primefaces-mobile/target/primefaces-mobile-10.0.jar</systemPath>
                 </dependency>
                 
 				<dependency>
