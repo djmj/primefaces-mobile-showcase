@@ -82,10 +82,14 @@ public class WeatherView implements Serializable
         try {
 			URL feedSource = new URL("http://weather.yahooapis.com/forecastrss?p=" + city + "&u=" + unit);
 			SyndFeedInput input = new SyndFeedInput();
-			SyndFeed feed = input.build(new XmlReader(feedSource));
-			String value = ((SyndEntry) feed.getEntries().get(0)).getDescription().getValue();
 			
-			conditions = value.split("<a href")[0];
+			try(XmlReader xmlReader = new XmlReader(feedSource))
+			{
+				SyndFeed feed = input.build(xmlReader);
+				String value = ((SyndEntry) feed.getEntries().get(0)).getDescription().getValue();
+				
+				conditions = value.split("<a href")[0];
+			}
 		} catch (Exception e) {
 			logger.severe(e.getMessage());
             conditions = "Unable to retrieve weather forecast at the moment.";

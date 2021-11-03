@@ -84,19 +84,23 @@ public class NewsView implements Serializable
 			for(String key : feeds.keySet()) {
 				URL feedSource = new URL(feeds.get(key));
 				SyndFeedInput input = new SyndFeedInput();
-				SyndFeed feed = input.build(new XmlReader(feedSource));
-				List<NewsEntry> entries = new ArrayList<NewsEntry>();
 				
-				int i = 0;
-				for(Object f : feed.getEntries()) {
-					SyndEntry entry = (SyndEntry) f;
-                    String title = entry.getTitle();
-                    title = title.length() <= 25 ? title : title.substring(0, 25);
-					entries.add(new NewsEntry(i, title + "...", entry.getDescription().getValue()));
-					i++;
+				try(XmlReader xmlReader = new XmlReader(feedSource))
+				{
+					SyndFeed feed = input.build(xmlReader);
+					List<NewsEntry> entries = new ArrayList<NewsEntry>();
+					
+					int i = 0;
+					for(Object f : feed.getEntries()) {
+						SyndEntry entry = (SyndEntry) f;
+	                    String title = entry.getTitle();
+	                    title = title.length() <= 25 ? title : title.substring(0, 25);
+						entries.add(new NewsEntry(i, title + "...", entry.getDescription().getValue()));
+						i++;
+					}
+					
+					news.add(new NewsGroup(key, entries));
 				}
-				
-				news.add(new NewsGroup(key, entries)); 
 			}
 		
 		} catch(Exception exception) {
