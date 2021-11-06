@@ -21,6 +21,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import javax.xml.crypto.Data;
+
 import org.primefaces.model.FilterMeta;
 import org.primefaces.model.LazyDataModel;
 import org.primefaces.model.SortMeta;
@@ -53,14 +55,14 @@ public class LazyCarDataModel extends LazyDataModel<Car>
     public String getRowKey(Car car) {
         return car.getId();
     }
-
-    @Override
-    public List<Car> load(int first, int pageSize, Map<String, SortMeta> sortBy, Map<String, FilterMeta> filterBy) 
+    
+    private List<Car> filter(Map<String, FilterMeta> filterBy)
     {
-        List<Car> data = new ArrayList<Car>();
-
-        //filter
-        for(Car car : datasource) {
+    	List<Car> data = new ArrayList<Car>();
+    	
+    	//filter
+        for(Car car : this.datasource) 
+        {
             boolean match = true;
 
             if (filterBy != null) {
@@ -88,7 +90,17 @@ public class LazyCarDataModel extends LazyDataModel<Car>
                 data.add(car);
             }
         }
+        
+        return data;
 
+    }
+
+    @Override
+    public List<Car> load(int first, int pageSize, Map<String, SortMeta> sortBy, Map<String, FilterMeta> filterBy) 
+    {
+    	// filter
+        List<Car> data = this.filter(filterBy);
+       
         //sort
         if(sortBy != null) {
         	SortMeta sortMeta = sortBy.values().iterator().next();
@@ -97,7 +109,6 @@ public class LazyCarDataModel extends LazyDataModel<Car>
 
         //rowCount
         int dataSize = data.size();
-        this.setRowCount(dataSize);
 
         //paginate
         if(dataSize > pageSize) {
@@ -112,4 +123,11 @@ public class LazyCarDataModel extends LazyDataModel<Car>
             return data;
         }
     }
+
+	@Override
+	public int count(Map<String, FilterMeta> filterBy)
+	{
+		List<Car> data = this.filter(filterBy);
+		return data.size();
+	}
 }
