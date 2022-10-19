@@ -233,7 +233,7 @@
                     <artifactId>primefaces-mobile</artifactId>
                     <version>11.0</version>
                          <scope>system</scope>
-					<systemPath>c:/Users/Marco/git/primefaces-mobile/target/primefaces-mobile-11.0.jar</systemPath>
+					<systemPath>c:/Users/Marco/primefaces-mobile-11.0.jar</systemPath>
                
                 </dependency>
                 
