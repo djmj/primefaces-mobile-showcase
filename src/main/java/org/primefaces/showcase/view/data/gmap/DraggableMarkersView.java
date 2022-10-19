@@ -52,8 +52,9 @@ public class DraggableMarkersView implements Serializable {
         draggableModel.addOverlay(new Marker(coord3, "Karaalioglu Parki"));
         draggableModel.addOverlay(new Marker(coord4, "Kaleici"));
          
-        for(Marker premarker : draggableModel.getMarkers()) {
-            premarker.setDraggable(true);
+        for(Object premarker : draggableModel.getMarkers()) {
+        	
+            ((Marker)premarker).setDraggable(true);
         }
     }
      
